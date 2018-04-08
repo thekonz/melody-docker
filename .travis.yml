@@ -1,0 +1,19 @@
+sudo: required
+
+language: bash
+
+services:
+  - docker
+
+script:
+  - bash test/test.sh
+
+deploy:
+  provider: script
+  on:
+    branch: master
+  script: bash docker_push.sh
+
+env:
+  global:
+    secure: RSziKIpk0A+egSxI7MH/69YJghUaDPBHtUKm57M8QC1jcSYJ59t/sIKDF3AxwaTTMzesY5vBlRtAsfOmnfjfd9TFJQ+UgUTE8rjFSCvSZlTK0/rY6Iq99+LK9DZsIFVtlO51Rh8HrUCrbCVgpOzuj0IUCuj400Wm+MnEO6yBw8Ek3VRitXIkZK/8iJw7FbrHM7MFO+9RhaAeF/FMkBbo9pifVX/Mv+Q7tWdkJAAKVQNuPYQhFdngdrWLaeHNzWYpOZAU1BrIzUcMqdCn912PYk3Z3/AaTJxHrQkjWy6oNLIS+/elPZ8CKrrs8WY1so0R0diiZmqDMK00ymfmGqzJvzUJh/S9ao+9o9su8ZqUYzdMmJMXZ9A9tBKiG2JtnVG0Ngdpf0BWsTT+n3zfpNs/Y0Rw42r4yiVkDl5rSpwhXUlpOStOGmE4vshEIJHA44gd/hUvwAOI7h268n7SB5jhzw5A5SR8xTEjwQyoC7nfHmyqM5Le+tEM/sgw1QkhDxhqXu59WJoUR4rXPIBW2+gLi5LZKMWC/9GEuOvPrLyffkf2XTQ9jBWcTTGrFE+FYXtNaJM4iqh2Cchy2X7D2tNGQ99QcQy38SdUkcEOhGeu77RZ+uOafs9gL7GJmj8RNobUh6xX93daAp+xualx1kjUCvjBJ7wenXHZOb0PDr7/8lw=
